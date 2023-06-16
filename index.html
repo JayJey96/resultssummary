@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Results summary component</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Hanken Grotesk', sans-serif;
+    }
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      display: flex;
+      background-color: white;
+      border-radius: 1.5em;
+      width: 550px;
+      box-shadow: 0px 15px 30px #e7edfb;
+    }
+    .left {
+      width: 50%;
+      background: linear-gradient(to bottom, hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2em;
+      border-radius: 1.5em;
+    }
+    .left .title {
+      color: hsl(241, 100%, 89%);
+      margin-bottom: 1.5em;
+    }
+    .left .circle {
+      background: linear-gradient(to bottom, hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+      width: 155px;
+      height: 155px;
+      border-radius: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5em;
+    }
+    .left .circle .item1 {
+      color: white;
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    .left .circle .item2 {
+      color: hsl(241, 100%, 89%);
+      font-size: .8rem;
+    }
+    .grade {
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: .5em;
+    }
+    .desc {
+      color: hsl(241, 100%, 89%);
+      text-align: center;
+      font-size: .8rem;
+      max-width: 180px;
+    }
+    .right {
+      width: 50%;
+      background-color: white;
+      border-radius: 1.5em;
+      padding: 2em;
+    }
+    .right .title {
+      color: rgb(24, 26, 39);
+      font-weight: 700;
+      margin-bottom: 1.5em;
+    }
+    .right .resultsContainer {
+      display: flex;
+      flex-direction: column;
+      gap: .7em;
+    }
+    .iconType {
+      width: 17px;
+      height: 17px;
+    }
+    .right .resultTitle {
+      font-size: .9rem;
+      padding-left: .5em;
+    }
+    .right .result {
+      margin-left: auto;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+    .resultsContainer .max {
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: 700;
+      padding-left: .2em;
+    }
+    .right .container {
+      display: flex;
+      padding: .7em .5em;
+      border-radius: .35em;
+      align-items: center;
+    }
+    .reaction {
+      background-color: hsla(0, 100%, 67%, 5%);
+      color: hsl(0, 100%, 67%);
+    }
+    .memory {
+      background-color: hsla(39, 100%, 56%, 5%);
+      color: hsl(39, 100%, 56%);
+    }
+    .verbal {
+      background-color: hsla(166, 100%, 37%, 5%);
+      color: hsl(166, 100%, 37%);
+    }
+    .visual {
+      background-color: hsla(234, 85%, 45%, 5%);
+      color: hsl(234, 85%, 45%);
+    }
+    .actual {
+      color: black;
+    }
+    button {
+      margin-top: 2em;
+      color: white;
+      border: none;
+      background-color: hsl(224, 30%, 27%);
+      padding: 1em 1em;
+      width: 100%;
+      border-radius: 2em;
+    }
+    @media only screen and (max-width: 700px) {
+      .card {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+      }
+      .left {
+        width: 300px;
+      }
+      .right {
+        width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="left">
+      <div class="title">Your Result</div>
+      <div class="circle">
+        <div class="item1">76</div>
+        <div class="item2">of 100</div>
+      </div>
+      <div class="grade">Great</div>
+      <div class="desc">You scored higher than 65% of the people who have taken these tests.</div>
+    </div>
+    <div class="right">
+      <div class="title">Summary</div>
+      <div class="resultsContainer">
+        <div class="reaction container">
+          <img class="iconType" src="assets/images/icon-reaction.svg" alt="reaction icon">
+          <div class="resultTitle">Reaction</div>
+          <div class="result"><span class="actual">80</span> <span class="max">/ 100</span></div>
+        </div>
+        <div class="memory container">
+          <img class="iconType" src="assets/images/icon-memory.svg" alt="memory icon">
+          <div class="resultTitle">Memory</div>
+          <div class="result"><span class="actual">92</span> <span class="max">/ 100</span></div>
+        </div>
+        <div class="verbal container">
+          <img class="iconType" src="assets/images/icon-verbal.svg" alt="verbal icon">
+          <div class="resultTitle">Verbal</div>
+          <div class="result"><span class="actual">61</span> <span class="max">/ 100</span></div>
+        </div>
+        <div class="visual container">
+          <img class="iconType" src="assets/images/icon-visual.svg" alt="visual icon">
+          <div class="resultTitle">Visual</div>
+          <div class="result"><span class="actual">72</span> <span class="max">/ 100</span></div>
+        </div>
+      </div>
+      <button>Continue</button>
+    </div>
+  </div>
+</body>
+</html>
